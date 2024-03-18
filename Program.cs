@@ -1,3 +1,5 @@
+// https://chillicream.com/docs/hotchocolate/v13/get-started-with-graphql-in-net-core
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
@@ -7,7 +9,8 @@ builder.Services
 var app = builder.Build();
 
 app.MapGraphQL();
-
+//app.UsePathBase("/graphql"); // does not work
+app.UseRouting();
 app.Run();
 
 public class Book
